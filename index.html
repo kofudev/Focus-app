@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kofu Focus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Kofu Focus</h1>
+    <nav>
+      <button class="tab active" data-target="timer-tab">Timer</button>
+      <button class="tab" data-target="notes-tab">Notes</button>
+      <button class="tab" data-target="todo-tab">To-Do</button>
+      <button class="tab" data-target="shop-tab">Boutique</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="timer-tab" class="tab-content active">
+      <div class="timer-container">
+        <svg class="progress-ring" width="150" height="150">
+          <circle class="progress-ring__circle" stroke="violet" stroke-width="10" fill="transparent" r="70" cx="75" cy="75"/>
+        </svg>
+        <div id="timer-display">00:00</div>
+        <input id="timer-minutes" type="number" min="1" max="120" value="20" />
+        <button id="start-timer-btn">Démarrer</button>
+      </div>
+    </section>
+
+    <section id="notes-tab" class="tab-content">
+      <textarea id="notes-textarea" placeholder="Écris tes notes ici..."></textarea>
+    </section>
+
+    <section id="todo-tab" class="tab-content">
+      <input type="text" id="task-input" placeholder="Nouvelle tâche..." />
+      <button id="add-task-btn">Ajouter</button>
+      <ul id="task-list"></ul>
+    </section>
+
+    <section id="shop-tab" class="tab-content">
+      <ul id="rewards-list"></ul>
+      <button id="buy-reward-btn">Acheter Récompense</button>
+    </section>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
